@@ -54,7 +54,7 @@ export default function ServicePreview() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
             <Link
               key={service.id}
@@ -62,7 +62,7 @@ export default function ServicePreview() {
               className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
             >
               {/* Service Image Background */}
-              <div className="aspect-[4/3] relative">
+              <div className="aspect-[16/9] relative">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={service.image}
@@ -74,11 +74,11 @@ export default function ServicePreview() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70 group-hover:opacity-60 transition-opacity" />
 
                 {/* Content */}
-                <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-                  <h3 className="text-2xl font-bold mb-2 group-hover:text-accent transition-colors">
+                <div className="absolute inset-0 flex flex-col justify-end p-5 text-white">
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-accent transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-gray-200 mb-4">{service.description}</p>
+                  <p className="text-gray-200 text-sm mb-3 line-clamp-2">{service.description}</p>
                   <span className="inline-flex items-center text-accent font-semibold group-hover:gap-2 transition-all">
                     Learn More
                     <svg

@@ -41,16 +41,16 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:items-center lg:gap-8">
+          <div className="hidden lg:flex lg:items-center lg:gap-6">
             {navigation.map((item) => (
               <div key={item.name} className="relative group">
                 {item.submenu ? (
                   <>
                     <button
-                      className={`font-semibold transition-all px-3 py-2 rounded-lg ${
+                      className={`font-bold text-base transition-all px-4 py-2 rounded-lg border-2 ${
                         pathname.startsWith("/services")
-                          ? "bg-accent text-white"
-                          : "text-gray-700 hover:bg-accent/10 hover:text-accent"
+                          ? "bg-accent text-white border-accent shadow-md"
+                          : "text-gray-700 border-transparent hover:border-accent/30 hover:bg-accent/5 hover:text-accent"
                       }`}
                     >
                       {item.name}
@@ -83,8 +83,10 @@ export default function Header() {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`font-semibold text-gray-700 hover:text-primary transition-colors ${
-                      pathname === item.href ? "text-primary" : ""
+                    className={`font-bold text-base transition-all px-4 py-2 rounded-lg border-2 ${
+                      pathname === item.href
+                        ? "bg-primary text-white border-primary shadow-md"
+                        : "text-gray-700 border-transparent hover:border-primary/30 hover:bg-primary/5 hover:text-primary"
                     }`}
                   >
                     {item.name}
@@ -153,7 +155,11 @@ export default function Header() {
                   <>
                     <button
                       onClick={() => setServicesOpen(!servicesOpen)}
-                      className="block w-full text-left py-3 font-semibold text-gray-700 hover:text-primary"
+                      className={`block w-full text-left py-3 px-3 font-bold rounded-lg ${
+                        pathname.startsWith("/services")
+                          ? "bg-accent text-white"
+                          : "text-gray-700 hover:bg-accent/10 hover:text-accent"
+                      }`}
                     >
                       {item.name}
                       <svg
@@ -173,12 +179,16 @@ export default function Header() {
                       </svg>
                     </button>
                     {servicesOpen && (
-                      <div className="pl-4">
+                      <div className="pl-4 mt-2">
                         {item.submenu.map((subitem) => (
                           <Link
                             key={subitem.name}
                             href={subitem.href}
-                            className="block py-2 text-gray-600 hover:text-primary"
+                            className={`block py-2 px-3 rounded-lg font-semibold mb-1 ${
+                              pathname === subitem.href
+                                ? "bg-primary/10 text-primary"
+                                : "text-gray-600 hover:bg-gray-100 hover:text-primary"
+                            }`}
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {subitem.name}
@@ -190,7 +200,11 @@ export default function Header() {
                 ) : (
                   <Link
                     href={item.href}
-                    className="block py-3 font-semibold text-gray-700 hover:text-primary"
+                    className={`block py-3 px-3 font-bold rounded-lg ${
+                      pathname === item.href
+                        ? "bg-primary text-white"
+                        : "text-gray-700 hover:bg-primary/10 hover:text-primary"
+                    }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.name}

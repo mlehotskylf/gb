@@ -75,9 +75,16 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           </div>
         </section>
 
-        {/* Service Gallery Grid */}
-        <section className="section-padding">
+        {/* Service Details & Gallery */}
+        <section className="bg-gray-50 py-12">
           <div className="container-custom">
+            <p className="text-base text-gray-700 leading-relaxed text-center max-w-3xl mx-auto mb-12">
+              {service.description}
+            </p>
+            <h2 className="text-3xl font-bold mb-4 text-center">Project Gallery</h2>
+            <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+              Browse our completed installations. Click any image to view in full size.
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {service.images.map((image, index) => (
                 <button
