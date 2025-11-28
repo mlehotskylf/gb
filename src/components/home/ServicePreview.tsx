@@ -1,69 +1,72 @@
 import Link from "next/link";
 
-const galleries = [
+const services = [
   {
     id: "bank-liquidation",
     title: "Bank Liquidation",
     description: "High-security vaults and safes from financial institutions",
     image: "/images/galleries/bank-liquidation/bank-1.jpg",
-    link: "/galleries/bank-liquidation",
+    link: "/services/bank-liquidation",
   },
   {
     id: "panic-safe-rooms",
     title: "Panic & Safe Rooms",
     description: "Custom-built secure rooms for ultimate protection",
     image: "/images/galleries/panic-safe-rooms/panic-1.jpg",
-    link: "/galleries/panic-safe-rooms",
+    link: "/services/panic-safe-rooms",
   },
   {
     id: "bunkers",
     title: "Bunkers & Bomb Shelters",
     description: "Underground fortifications engineered for survival",
     image: "/images/galleries/bunkers/bunker-1.jpg",
-    link: "/galleries/bunkers",
+    link: "/services/bunkers",
   },
   {
     id: "bulletproof-glass",
     title: "Bulletproof Glass",
     description: "Military-grade transparent armor for any application",
     image: "/images/galleries/bulletproof-glass/glass-1.png",
-    link: "/galleries/bulletproof-glass",
+    link: "/services/bulletproof-glass",
   },
   {
     id: "safes",
     title: "Any Type of Safes",
     description: "From compact personal safes to massive vault systems",
     image: "/images/galleries/safes/safe-1.jpg",
-    link: "/galleries/safes",
+    link: "/services/safes",
   },
 ];
 
-export default function GalleryPreview() {
+export default function ServicePreview() {
   return (
-    <section className="section-padding bg-gray-50">
+    <section className="section-padding bg-white border-t-4 border-accent">
       <div className="container-custom">
         <div className="text-center mb-12">
+          <div className="inline-block bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            WHAT WE OFFER
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Our Security Solutions
+            Our Security Services
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Explore our comprehensive range of custom security installations
+            Professional installation and custom solutions for ultimate protection
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {galleries.map((gallery) => (
+          {services.map((service) => (
             <Link
-              key={gallery.id}
-              href={gallery.link}
+              key={service.id}
+              href={service.link}
               className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
             >
-              {/* Gallery Image Background */}
+              {/* Service Image Background */}
               <div className="aspect-[4/3] relative">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={gallery.image}
-                  alt={gallery.title}
+                  src={service.image}
+                  alt={service.title}
                   className="w-full h-full object-cover"
                 />
 
@@ -73,11 +76,11 @@ export default function GalleryPreview() {
                 {/* Content */}
                 <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
                   <h3 className="text-2xl font-bold mb-2 group-hover:text-accent transition-colors">
-                    {gallery.title}
+                    {service.title}
                   </h3>
-                  <p className="text-gray-200 mb-4">{gallery.description}</p>
+                  <p className="text-gray-200 mb-4">{service.description}</p>
                   <span className="inline-flex items-center text-accent font-semibold group-hover:gap-2 transition-all">
-                    See More
+                    Learn More
                     <svg
                       className="w-5 h-5 ml-1 group-hover:ml-2 transition-all"
                       fill="none"
@@ -99,8 +102,14 @@ export default function GalleryPreview() {
         </div>
 
         <div className="text-center mt-12">
-          <Link href="/galleries" className="btn-primary">
-            View All Galleries
+          <Link
+            href="/services"
+            className="btn-primary text-lg px-10 py-4 inline-flex items-center gap-2 shadow-lg hover:shadow-xl transition-all"
+          >
+            View All Services
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
           </Link>
         </div>
       </div>

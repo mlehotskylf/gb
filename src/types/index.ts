@@ -1,13 +1,13 @@
-export interface GalleryCategory {
+export interface ServiceCategory {
   id: string;
   title: string;
   slug: string;
   description: string;
   coverImage: string;
-  images: GalleryImage[];
+  images: ServiceImage[];
 }
 
-export interface GalleryImage {
+export interface ServiceImage {
   id: string;
   url: string;
   alt: string;

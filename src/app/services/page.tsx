@@ -1,43 +1,43 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { galleryCategories } from "@/lib/gallery-data";
+import { serviceCategories } from "@/lib/service-data";
 
 export const metadata: Metadata = {
-  title: "Galleries | Global Bunkers US",
+  title: "Services | Global Bunkers US",
   description:
-    "View our portfolio of security solutions including bunkers, panic rooms, safes, bulletproof glass, and bank liquidation projects.",
+    "Explore our security services including bunkers, panic rooms, safes, bulletproof glass, and bank liquidation solutions.",
 };
 
-export default function GalleriesPage() {
+export default function ServicesPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary to-secondary text-white py-20">
         <div className="container-custom">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Galleries</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Services</h1>
           <p className="text-xl md:text-2xl max-w-3xl">
-            Explore our extensive portfolio of security solutions and custom
+            Explore our comprehensive range of security solutions and custom
             installations
           </p>
         </div>
       </section>
 
-      {/* Galleries Grid */}
+      {/* Services Grid */}
       <section className="section-padding">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {galleryCategories.map((gallery) => (
+            {serviceCategories.map((service) => (
               <Link
-                key={gallery.id}
-                href={`/galleries/${gallery.slug}`}
+                key={service.id}
+                href={`/services/${service.slug}`}
                 className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
               >
-                {/* Gallery Image */}
+                {/* Service Image */}
                 <div className="aspect-[4/3] relative">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={gallery.coverImage}
-                    alt={gallery.title}
+                    src={service.coverImage}
+                    alt={service.title}
                     className="w-full h-full object-cover"
                   />
 
@@ -47,13 +47,13 @@ export default function GalleriesPage() {
                   {/* Content */}
                   <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
                     <h2 className="text-2xl font-bold mb-2 group-hover:text-accent transition-colors">
-                      {gallery.title}
+                      {service.title}
                     </h2>
                     <p className="text-gray-200 text-sm mb-4 line-clamp-2">
-                      {gallery.description}
+                      {service.description}
                     </p>
                     <span className="inline-flex items-center text-accent font-semibold">
-                      View Gallery
+                      Learn More
                       <svg
                         className="w-5 h-5 ml-1 group-hover:ml-2 transition-all"
                         fill="none"

@@ -8,7 +8,7 @@ Modern, high-performance website for Global Bunkers US, built with Next.js 14, T
 - **Responsive Design**: Mobile-first, fully responsive across all devices
 - **Performance Optimized**: Built-in image optimization, lazy loading
 - **SEO Friendly**: Server-side rendering, meta tags, semantic HTML
-- **Interactive Galleries**: Lightbox viewing, smooth transitions
+- **Interactive Service Showcases**: Lightbox viewing, smooth transitions
 - **Contact Form**: Integrated contact form with validation
 - **Easy Content Management**: Structured data files for easy updates
 
@@ -48,7 +48,7 @@ gb/
 │   ├── app/                  # Next.js app router pages
 │   │   ├── about/           # About page
 │   │   ├── contact/         # Contact page
-│   │   ├── galleries/       # Gallery pages
+│   │   ├── services/        # Service pages
 │   │   ├── layout.tsx       # Root layout
 │   │   └── page.tsx         # Homepage
 │   ├── components/
@@ -64,14 +64,14 @@ gb/
 
 ## Content Management
 
-### Updating Gallery Content
+### Updating Service Content
 
-Edit `src/lib/gallery-data.ts` to update gallery categories and images.
+Edit `src/lib/service-data.ts` to update service categories and images.
 
 ### Adding Images
 
 1. Place images in `public/images/galleries/[category-name]/`
-2. Update the image references in `src/lib/gallery-data.ts`
+2. Update the image references in `src/lib/service-data.ts`
 3. The site will automatically optimize and serve them
 
 ### Migrating Images from Old Site
@@ -110,7 +110,7 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 3. **Modern Aesthetics**: Clean, professional design with smooth animations
 4. **Accessibility**: WCAG compliant, keyboard navigation, screen reader support
 5. **SEO**: Improved meta tags, semantic HTML, better content structure
-6. **User Experience**: Intuitive navigation, lightbox galleries, clear CTAs
+6. **User Experience**: Intuitive navigation, lightbox image viewing, clear CTAs
 
 ## Browser Support
 

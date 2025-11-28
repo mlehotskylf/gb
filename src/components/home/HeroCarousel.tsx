@@ -9,14 +9,14 @@ const slides = [
     image: "/images/hero/hero-1.jpg",
     title: "Custom Bunkers & Bomb Shelters",
     subtitle: "Ultimate protection designed for your specific needs",
-    cta: { text: "View Gallery", link: "/galleries/bunkers" },
+    cta: { text: "View Service", link: "/services/bunkers" },
   },
   {
     id: 2,
     image: "/images/hero/hero-4.png",
     title: "High-Security Safes & Vaults",
     subtitle: "Bank-grade protection for your most valuable assets",
-    cta: { text: "View Gallery", link: "/galleries/bank-liquidation" },
+    cta: { text: "View Service", link: "/services/bank-liquidation" },
   },
   {
     id: 3,
@@ -51,7 +51,7 @@ export default function HeroCarousel() {
   };
 
   return (
-    <section className="relative h-[600px] md:h-[700px] overflow-hidden bg-gray-900">
+    <section className="relative h-[450px] md:h-[550px] overflow-hidden bg-gray-900">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div

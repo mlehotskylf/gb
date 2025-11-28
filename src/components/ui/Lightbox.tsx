@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
-import { GalleryImage } from "@/types";
+import { ServiceImage } from "@/types";
 
 interface LightboxProps {
-  images: GalleryImage[];
+  images: ServiceImage[];
   currentIndex: number;
   onClose: () => void;
   onNext: () => void;
@@ -78,7 +78,7 @@ export default function Lightbox({
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={currentImage.url}
-            alt={currentImage.alt || "Gallery Image"}
+            alt={currentImage.alt || "Service Image"}
             className="max-w-full max-h-[80vh] mx-auto rounded-lg object-contain"
           />
           {currentImage.caption && (

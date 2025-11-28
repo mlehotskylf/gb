@@ -1,6 +1,6 @@
-import { GalleryCategory } from "@/types";
+import { ServiceCategory } from "@/types";
 
-export const galleryCategories: GalleryCategory[] = [
+export const serviceCategories: ServiceCategory[] = [
   {
     id: "bank-liquidation",
     title: "Bank Liquidation",
@@ -197,10 +197,10 @@ export const galleryCategories: GalleryCategory[] = [
   },
 ];
 
-export function getGalleryBySlug(slug: string): GalleryCategory | undefined {
-  return galleryCategories.find((cat) => cat.slug === slug);
+export function getServiceBySlug(slug: string): ServiceCategory | undefined {
+  return serviceCategories.find((cat) => cat.slug === slug);
 }
 
-export function getAllGallerySlugs(): string[] {
-  return galleryCategories.map((cat) => cat.slug);
+export function getAllServiceSlugs(): string[] {
+  return serviceCategories.map((cat) => cat.slug);
 }

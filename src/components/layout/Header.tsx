@@ -7,14 +7,14 @@ import { usePathname } from "next/navigation";
 const navigation = [
   { name: "Home", href: "/" },
   {
-    name: "Galleries",
-    href: "/galleries",
+    name: "Services",
+    href: "/services",
     submenu: [
-      { name: "Bank Liquidation", href: "/galleries/bank-liquidation" },
-      { name: "Panic & Safe Rooms", href: "/galleries/panic-safe-rooms" },
-      { name: "Bunkers & Bomb Shelters", href: "/galleries/bunkers" },
-      { name: "Bulletproof Glass", href: "/galleries/bulletproof-glass" },
-      { name: "Any Type of Safes", href: "/galleries/safes" },
+      { name: "Bank Liquidation", href: "/services/bank-liquidation" },
+      { name: "Panic & Safe Rooms", href: "/services/panic-safe-rooms" },
+      { name: "Bunkers & Bomb Shelters", href: "/services/bunkers" },
+      { name: "Bulletproof Glass", href: "/services/bulletproof-glass" },
+      { name: "Any Type of Safes", href: "/services/safes" },
     ],
   },
   { name: "About", href: "/about" },
@@ -23,7 +23,7 @@ const navigation = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [galleriesOpen, setGalleriesOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const pathname = usePathname();
 
   return (
@@ -47,8 +47,10 @@ export default function Header() {
                 {item.submenu ? (
                   <>
                     <button
-                      className={`font-semibold text-gray-700 hover:text-primary transition-colors ${
-                        pathname.startsWith("/galleries") ? "text-primary" : ""
+                      className={`font-semibold transition-all px-3 py-2 rounded-lg ${
+                        pathname.startsWith("/services")
+                          ? "bg-accent text-white"
+                          : "text-gray-700 hover:bg-accent/10 hover:text-accent"
                       }`}
                     >
                       {item.name}
@@ -150,13 +152,13 @@ export default function Header() {
                 {item.submenu ? (
                   <>
                     <button
-                      onClick={() => setGalleriesOpen(!galleriesOpen)}
+                      onClick={() => setServicesOpen(!servicesOpen)}
                       className="block w-full text-left py-3 font-semibold text-gray-700 hover:text-primary"
                     >
                       {item.name}
                       <svg
                         className={`inline-block ml-1 w-4 h-4 transition-transform ${
-                          galleriesOpen ? "rotate-180" : ""
+                          servicesOpen ? "rotate-180" : ""
                         }`}
                         fill="none"
                         stroke="currentColor"
@@ -170,7 +172,7 @@ export default function Header() {
                         />
                       </svg>
                     </button>
-                    {galleriesOpen && (
+                    {servicesOpen && (
                       <div className="pl-4">
                         {item.submenu.map((subitem) => (
                           <Link

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About Us | Global Bunkers US",
@@ -47,7 +48,14 @@ export default function AboutPage() {
                 specific needs and requirements.
               </p>
             </div>
-            <div className="bg-gradient-to-br from-gray-700 to-gray-500 aspect-[4/3] rounded-xl shadow-2xl" />
+            <div className="aspect-[4/3] rounded-xl shadow-2xl overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/imgi_5_PHOTO-2024-09-11-07-33-05.jpg"
+                alt="Global Bunkers Security Solutions"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -64,42 +72,55 @@ export default function AboutPage() {
                 title: "Bunkers & Bomb Shelters",
                 description:
                   "Custom-designed underground fortifications built to withstand extreme conditions and provide ultimate protection.",
+                href: "/services/bunkers",
               },
               {
                 title: "Panic & Safe Rooms",
                 description:
                   "Secure, fortified rooms integrated into your home or business for emergency protection and valuable storage.",
+                href: "/services/panic-safe-rooms",
               },
               {
                 title: "High-Security Safes",
                 description:
                   "Any type of safe from compact personal safes to large vault systems for maximum security of your valuables.",
+                href: "/services/safes",
               },
               {
                 title: "Bulletproof Glass",
                 description:
                   "Military-grade transparent armor for windows, doors, and partitions to protect against ballistic threats.",
+                href: "/services/bulletproof-glass",
               },
               {
                 title: "Bank Liquidation",
                 description:
                   "Specialized services for acquiring and repurposing high-security equipment from decommissioned financial institutions.",
+                href: "/services/bank-liquidation",
               },
               {
                 title: "Security Systems",
                 description:
                   "Comprehensive security system integration including surveillance, access control, and alarm systems.",
+                href: "/services",
               },
             ].map((service) => (
-              <div
+              <Link
                 key={service.title}
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow"
+                href={service.href}
+                className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block"
               >
-                <h3 className="text-xl font-bold mb-3 text-primary">
+                <h3 className="text-xl font-bold mb-3 text-primary group-hover:text-accent transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-gray-600">{service.description}</p>
-              </div>
+                <div className="mt-4 text-accent font-semibold inline-flex items-center">
+                  Learn More
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -109,7 +130,14 @@ export default function AboutPage() {
       <section className="section-padding">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="bg-gradient-to-br from-gray-600 to-gray-800 aspect-[4/3] rounded-xl shadow-2xl" />
+            <div className="aspect-[4/3] rounded-xl shadow-2xl overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/imgi_4_Vince-and-Delia-Neuwirth.jpg"
+                alt="Vince and Delia Neuwirth - Founders of Global Bunkers US"
+                className="w-full h-full object-cover"
+              />
+            </div>
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Experience & Expertise

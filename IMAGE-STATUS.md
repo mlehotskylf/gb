@@ -1,29 +1,29 @@
 # Image Migration Status
 
-## ✅ COMPLETED: Bank Liquidation Gallery
+## ✅ COMPLETED: Bank Liquidation Service
 
 **Status:** Fully migrated and configured
 **Images:** 39 images
 **Location:** `public/images/galleries/bank-liquidation/`
-**Code:** Updated in `src/lib/gallery-data.ts`
+**Code:** Updated in `src/lib/service-data.ts`
 
 ### What Was Done:
 
 1. ✅ Copied 39 images from Downloads folder
 2. ✅ Renamed to clean filenames (bank-1.jpg through bank-39.jpg)
-3. ✅ Updated gallery-data.ts with all 39 image references
+3. ✅ Updated service-data.ts with all 39 image references
 4. ✅ Added descriptive alt text for SEO
 5. ✅ Set cover image to bank-1.jpg
 
 ### View It Live:
 
-**Visit:** http://localhost:3001/galleries/bank-liquidation
+**Visit:** http://localhost:3001/services/bank-liquidation
 
 You should now see all 39 Bank Liquidation images in the gallery with working lightbox!
 
 ---
 
-## ⏳ PENDING: Remaining Galleries
+## ⏳ PENDING: Remaining Services
 
 ### 1. Panic & Safe Rooms
 - **URL:** https://www.globalbunkers.us/panic-and-safe-rooms
@@ -94,14 +94,14 @@ done
 
 ### Step 3: Update Code
 
-Edit `src/lib/gallery-data.ts` to add image references (follow the Bank Liquidation example).
+Edit `src/lib/service-data.ts` to add image references (follow the Bank Liquidation example).
 
 ---
 
 ## Quick Reference:
 
-**Gallery Data File:** `src/lib/gallery-data.ts`
-**Gallery Images:** `public/images/galleries/[category-name]/`
+**Service Data File:** `src/lib/service-data.ts`
+**Service Images:** `public/images/galleries/[category-name]/`
 **Hero Images:** `public/images/hero/`
 **Dev Server:** http://localhost:3001
 
@@ -118,10 +118,10 @@ Edit `src/lib/gallery-data.ts` to add image references (follow the Bank Liquidat
 
 ## Testing:
 
-After adding images to any gallery:
+After adding images to any service:
 
 1. Images are automatically detected (no server restart needed in dev mode)
-2. Visit: http://localhost:3001/galleries/[category-slug]
+2. Visit: http://localhost:3001/services/[category-slug]
 3. Click images to test lightbox
 4. Check mobile responsiveness
 
@@ -136,7 +136,7 @@ After adding images to any gallery:
 - [ ] Any Type of Safes - 0 images
 - [ ] Homepage Hero/Carousel - 0 images
 
-**Overall Progress: 1/6 galleries complete (17%)**
+**Overall Progress: 1/6 services complete (17%)**
 
 ---
 
@@ -144,6 +144,6 @@ After adding images to any gallery:
 
 - **Quick Guide:** See `QUICK-START-IMAGES.md`
 - **Detailed Guide:** See `IMAGE-DOWNLOAD-GUIDE.md`
-- **Current Status:** http://localhost:3001/galleries/bank-liquidation (working!)
+- **Current Status:** http://localhost:3001/services/bank-liquidation (working!)
 
 Let me know when you have more images downloaded and I'll help you set them up!

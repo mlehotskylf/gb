@@ -48,10 +48,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/galleries"
+                  href="/services"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  Galleries
+                  Services
                 </Link>
               </li>
               <li>

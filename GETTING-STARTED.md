@@ -5,10 +5,10 @@ Congratulations! Your new website has been successfully created. This guide will
 ## What's Been Built
 
 A complete, modern website with:
-- Homepage with hero carousel and gallery preview
+- Homepage with hero carousel and service preview
 - About page with company information
 - Contact page with form
-- 5 Gallery pages (Bank Liquidation, Panic Rooms, Bunkers, Bulletproof Glass, Safes)
+- 5 Service pages (Bank Liquidation, Panic Rooms, Bunkers, Bulletproof Glass, Safes)
 - Responsive design (mobile, tablet, desktop)
 - Professional navigation with dropdown menus
 - Footer with contact information
@@ -47,7 +47,7 @@ This creates the necessary folders and provides detailed download instructions.
 
 ### 3. Update Image References
 
-After adding images, edit `src/lib/gallery-data.ts`:
+After adding images, edit `src/lib/service-data.ts`:
 
 ```typescript
 images: [
@@ -82,7 +82,7 @@ Visit `localhost:3000` and test:
 - [ ] All pages load
 - [ ] Navigation works
 - [ ] Mobile menu works
-- [ ] Gallery lightbox works
+- [ ] Service lightbox works
 - [ ] Contact form validates
 - [ ] All links work
 
@@ -123,7 +123,7 @@ You'll get a URL like `your-app.vercel.app`
 1. **Add Real Images** (High Priority)
    - Download images from old site
    - Place in correct folders
-   - Update gallery-data.ts
+   - Update service-data.ts
 
 2. **Test Contact Form** (High Priority)
    - The form currently simulates submission
@@ -155,13 +155,13 @@ gb/
 │   │   ├── page.tsx              # Homepage
 │   │   ├── about/page.tsx        # About page
 │   │   ├── contact/page.tsx      # Contact page
-│   │   └── galleries/            # Gallery pages
+│   │   └── services/             # Service pages
 │   ├── components/
 │   │   ├── home/                 # Homepage components
 │   │   ├── layout/               # Header & Footer
 │   │   └── ui/                   # Reusable components
 │   ├── lib/
-│   │   └── gallery-data.ts       # Gallery content (EDIT THIS)
+│   │   └── service-data.ts       # Service content (EDIT THIS)
 │   └── types/                    # TypeScript types
 ├── public/
 │   └── images/                   # All images go here
@@ -173,7 +173,7 @@ gb/
 
 ## Key Files to Edit
 
-- **Gallery Content**: `src/lib/gallery-data.ts`
+- **Service Content**: `src/lib/service-data.ts`
 - **Homepage Carousel**: `src/components/home/HeroCarousel.tsx`
 - **Contact Info**: `src/components/layout/Header.tsx` and `Footer.tsx`
 - **About Page**: `src/app/about/page.tsx`
@@ -237,13 +237,13 @@ npm install
 - **Improved SEO** with proper meta tags
 - **Smooth animations** and transitions
 - **Professional navigation** with dropdown menus
-- **Gallery lightbox** for better image viewing
+- **Service image lightbox** for better image viewing
 - **Easy to update** with structured data files
 - **Free hosting** possible (Vercel free tier)
 - **Automatic deployments** from GitHub
 
 ### Same Features
-- All gallery categories
+- All service categories
 - Contact form
 - About page
 - Company information

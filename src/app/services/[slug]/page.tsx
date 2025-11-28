@@ -3,15 +3,15 @@
 import { useState } from "react";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getGalleryBySlug, galleryCategories } from "@/lib/gallery-data";
+import { getServiceBySlug, serviceCategories } from "@/lib/service-data";
 import Lightbox from "@/components/ui/Lightbox";
 
-export default function GalleryPage({ params }: { params: { slug: string } }) {
-  const gallery = getGalleryBySlug(params.slug);
+export default function ServicePage({ params }: { params: { slug: string } }) {
+  const service = getServiceBySlug(params.slug);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  if (!gallery) {
+  if (!service) {
     notFound();
   }
 
@@ -25,18 +25,18 @@ export default function GalleryPage({ params }: { params: { slug: string } }) {
   };
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % gallery.images.length);
+    setCurrentImageIndex((prev) => (prev + 1) % service.images.length);
   };
 
   const prevImage = () => {
     setCurrentImageIndex(
-      (prev) => (prev - 1 + gallery.images.length) % gallery.images.length
+      (prev) => (prev - 1 + service.images.length) % service.images.length
     );
   };
 
-  // Get other galleries for navigation
-  const otherGalleries = galleryCategories.filter(
-    (cat) => cat.id !== gallery.id
+  // Get other services for navigation
+  const otherServices = serviceCategories.filter(
+    (cat) => cat.id !== service.id
   );
 
   return (
@@ -47,7 +47,7 @@ export default function GalleryPage({ params }: { params: { slug: string } }) {
           <div className="container-custom">
             <div className="mb-4">
               <Link
-                href="/galleries"
+                href="/services"
                 className="inline-flex items-center text-gray-300 hover:text-white transition-colors"
               >
                 <svg
@@ -63,23 +63,23 @@ export default function GalleryPage({ params }: { params: { slug: string } }) {
                     d="M15 19l-7-7 7-7"
                   />
                 </svg>
-                Back to Galleries
+                Back to Services
               </Link>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              {gallery.title}
+              {service.title}
             </h1>
             <p className="text-xl md:text-2xl max-w-3xl">
-              {gallery.description}
+              {service.description}
             </p>
           </div>
         </section>
 
-        {/* Gallery Grid */}
+        {/* Service Gallery Grid */}
         <section className="section-padding">
           <div className="container-custom">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {gallery.images.map((image, index) => (
+              {service.images.map((image, index) => (
                 <button
                   key={image.id}
                   onClick={() => openLightbox(index)}
@@ -114,17 +114,17 @@ export default function GalleryPage({ params }: { params: { slug: string } }) {
           </div>
         </section>
 
-        {/* Other Galleries */}
+        {/* Other Services */}
         <section className="section-padding bg-gray-50">
           <div className="container-custom">
             <h2 className="text-3xl font-bold mb-8 text-center">
-              Explore More Galleries
+              Explore More Services
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {otherGalleries.slice(0, 4).map((cat) => (
+              {otherServices.slice(0, 4).map((cat) => (
                 <Link
                   key={cat.id}
-                  href={`/galleries/${cat.slug}`}
+                  href={`/services/${cat.slug}`}
                   className="group"
                 >
                   <div className="aspect-[4/3] rounded-lg mb-3 group-hover:shadow-lg transition-all overflow-hidden">
@@ -163,7 +163,7 @@ export default function GalleryPage({ params }: { params: { slug: string } }) {
       {/* Lightbox */}
       {lightboxOpen && (
         <Lightbox
-          images={gallery.images}
+          images={service.images}
           currentIndex={currentImageIndex}
           onClose={closeLightbox}
           onNext={nextImage}

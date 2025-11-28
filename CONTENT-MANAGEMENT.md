@@ -18,16 +18,16 @@ const slides = [
     subtitle: "Your subtitle here",      // Change this
     cta: {
       text: "Button Text",               // Change button text
-      link: "/galleries/bunkers"         // Change button link
+      link: "/services/bunkers"          // Change button link
     },
   },
   // Add more slides...
 ];
 ```
 
-### Gallery Categories
+### Service Categories
 
-Edit `src/lib/gallery-data.ts`
+Edit `src/lib/service-data.ts`
 
 Update category information:
 ```typescript
@@ -84,11 +84,11 @@ image: "/images/galleries/bunkers/new-image.jpg"
 
 ---
 
-## Adding a New Gallery Category
+## Adding a New Service Category
 
 1. **Add images** to `public/images/galleries/new-category/`
 
-2. **Edit** `src/lib/gallery-data.ts`
+2. **Edit** `src/lib/service-data.ts`
 
 3. **Add new category object**:
 ```typescript
@@ -112,7 +112,7 @@ image: "/images/galleries/bunkers/new-image.jpg"
 ```typescript
 submenu: [
   // ... existing items
-  { name: "New Category", href: "/galleries/new-category" },
+  { name: "New Category", href: "/services/new-category" },
 ]
 ```
 
@@ -200,7 +200,7 @@ Alternatively, integrate a headless CMS like:
 - [ ] Phone number: Update in Header.tsx and Footer.tsx
 - [ ] Email: Update in Footer.tsx and contact page
 - [ ] Address: Update in Footer.tsx and contact page
-- [ ] Gallery images: Add to appropriate folder, update gallery-data.ts
+- [ ] Service images: Add to appropriate folder, update service-data.ts
 - [ ] Homepage carousel: Update HeroCarousel.tsx
 - [ ] Services/pricing: Update About page
 
