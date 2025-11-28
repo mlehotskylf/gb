@@ -86,7 +86,7 @@ Visit `localhost:3000` and test:
 - [ ] Contact form validates
 - [ ] All links work
 
-## Deploy to Railway
+## Deploy to Vercel
 
 ### 1. Push to GitHub
 
@@ -96,20 +96,19 @@ git commit -m "Initial website setup"
 git push origin main
 ```
 
-### 2. Deploy on Railway
+### 2. Deploy on Vercel
 
-1. Go to [railway.app](https://railway.app)
+1. Go to [vercel.com](https://vercel.com)
 2. Sign in with GitHub
 3. Click "New Project"
-4. Select "Deploy from GitHub repo"
-5. Choose your `gb` repository
-6. Railway automatically detects Next.js and deploys!
+4. Import your GitHub repository
+5. Vercel automatically detects Next.js and deploys!
 
-You'll get a URL like `your-app.railway.app`
+You'll get a URL like `your-app.vercel.app`
 
 ### 3. Add Custom Domain
 
-1. Go to your Railway project settings
+1. Go to Project Settings in Vercel
 2. Click "Domains"
 3. Add `www.globalbunkers.us`
 4. Update your DNS records as instructed
@@ -186,7 +185,7 @@ gb/
 - **DEPLOYMENT.md** - Detailed deployment instructions
 - **CONTENT-MANAGEMENT.md** - How to update content
 - **Next.js Docs** - [nextjs.org/docs](https://nextjs.org/docs)
-- **Railway Docs** - [docs.railway.app](https://docs.railway.app)
+- **Vercel Docs** - [vercel.com/docs](https://vercel.com/docs)
 
 ## Common Commands
 
@@ -240,7 +239,7 @@ npm install
 - **Professional navigation** with dropdown menus
 - **Gallery lightbox** for better image viewing
 - **Easy to update** with structured data files
-- **Free hosting** possible (Railway free tier)
+- **Free hosting** possible (Vercel free tier)
 - **Automatic deployments** from GitHub
 
 ### Same Features
@@ -259,7 +258,7 @@ Before going live:
 - [ ] Tested on mobile devices
 - [ ] Tested on different browsers
 - [ ] DNS records updated
-- [ ] SSL certificate active (automatic on Railway)
+- [ ] SSL certificate active (automatic on Vercel)
 - [ ] Old site backed up
 - [ ] Google Analytics added (optional)
 
@@ -270,7 +269,7 @@ Check these resources:
 2. `DEPLOYMENT.md` - Deployment help
 3. `README.md` - Technical details
 4. Next.js Documentation
-5. Railway Documentation
+5. Vercel Documentation
 
 ---
 

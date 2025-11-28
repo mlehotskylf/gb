@@ -1,56 +1,10 @@
 # Deployment Guide
 
-## Railway Deployment (Recommended)
+## Vercel Deployment (Recommended)
 
-Railway is a modern platform that makes deploying Next.js apps incredibly simple.
+Vercel is made by the creators of Next.js and offers the best integration and performance for Next.js applications.
 
 ### Initial Setup
-
-1. **Create Railway Account**
-   - Go to [railway.app](https://railway.app)
-   - Sign up with GitHub
-
-2. **Create New Project**
-   - Click "New Project"
-   - Select "Deploy from GitHub repo"
-   - Choose your `gb` repository
-   - Railway will auto-detect Next.js
-
-3. **Configure Build**
-   - Railway automatically detects Next.js configuration
-   - Build command: `npm run build`
-   - Start command: `npm start`
-   - No additional configuration needed!
-
-4. **Environment Variables** (Optional)
-   - Go to your project settings
-   - Add environment variables if needed:
-     - `NEXT_PUBLIC_SITE_URL` (your custom domain)
-     - Email service keys if you set up contact form backend
-
-5. **Deploy**
-   - Railway automatically deploys on every push to main branch
-   - First deployment takes 2-3 minutes
-   - You'll get a temporary `.railway.app` URL
-
-6. **Custom Domain**
-   - Go to Settings > Domains
-   - Add your custom domain (`www.globalbunkers.us`)
-   - Update DNS records as instructed
-   - Railway provides automatic SSL certificates
-
-### Cost
-- **Free tier**: Good for testing (500 hours/month)
-- **Hobby plan**: $5/month (recommended for production)
-- **Pro plan**: $20/month (if you need more resources)
-
----
-
-## Alternative: Vercel Deployment
-
-Vercel is made by the creators of Next.js and offers excellent integration.
-
-### Setup
 
 1. **Create Vercel Account**
    - Go to [vercel.com](https://vercel.com)
@@ -61,18 +15,43 @@ Vercel is made by the creators of Next.js and offers excellent integration.
    - Import your GitHub repository
    - Vercel auto-detects Next.js settings
 
-3. **Deploy**
-   - Click "Deploy"
-   - Done! You get a `.vercel.app` URL
+3. **Configure Build** (Optional - Auto-detected)
+   - Build command: `npm run build`
+   - Output directory: `.next`
+   - Install command: `npm install`
+   - Development command: `npm run dev`
 
-4. **Custom Domain**
+4. **Environment Variables** (Optional)
+   - Go to Project Settings > Environment Variables
+   - Add environment variables if needed:
+     - `NEXT_PUBLIC_SITE_URL` (your custom domain)
+     - Email service keys if you set up contact form backend
+
+5. **Deploy**
+   - Click "Deploy"
+   - First deployment takes 1-2 minutes
+   - You get a `.vercel.app` URL immediately
+   - Automatic deployments on every push to main branch
+
+6. **Custom Domain**
    - Go to Project Settings > Domains
-   - Add `www.globalbunkers.us`
+   - Add your custom domain (`www.globalbunkers.us`)
+   - Vercel provides automatic SSL certificates
    - Update DNS records as instructed
 
 ### Cost
 - **Free tier**: Includes custom domain, SSL, and generous limits
-- Perfect for this size website
+- **Pro plan**: $20/month (only if you need more team features or bandwidth)
+- Perfect for this size website on the free tier
+
+### Benefits
+- Built by Next.js creators - best performance and compatibility
+- Automatic HTTPS/SSL
+- Global CDN with edge caching
+- Automatic image optimization
+- Zero configuration needed
+- Preview deployments for every PR
+- 99.99% uptime SLA
 
 ---
 
@@ -111,18 +90,18 @@ Before deploying, make sure:
 
 Point your domain to your hosting provider:
 
-**For Railway:**
-```
-CNAME  www  your-app.railway.app
-```
-
 **For Vercel:**
 ```
 CNAME  www  cname.vercel-dns.com
 ```
 
+**For Netlify:**
+```
+CNAME  www  your-site.netlify.app
+```
+
 ### SSL Certificate
-All recommended platforms (Railway, Vercel, Netlify) provide free automatic SSL certificates.
+All recommended platforms (Vercel, Netlify) provide free automatic SSL certificates.
 
 ### Monitoring
 - Set up uptime monitoring (UptimeRobot, Pingdom)
@@ -165,14 +144,13 @@ Once set up, deployment is automatic:
 ## Backup and Rollback
 
 All platforms keep deployment history:
-- Railway: Click on previous deployment to rollback
-- Vercel: Go to Deployments tab, click previous build
+- Vercel: Go to Deployments tab, click "..." on previous build, select "Promote to Production"
 - Netlify: Deployments > click "Publish deploy" on previous version
 
 ---
 
 ## Need Help?
 
-- Railway docs: [docs.railway.app](https://docs.railway.app)
 - Vercel docs: [vercel.com/docs](https://vercel.com/docs)
 - Next.js docs: [nextjs.org/docs](https://nextjs.org/docs)
+- Vercel support: [vercel.com/support](https://vercel.com/support)

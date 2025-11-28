@@ -86,12 +86,13 @@ This will create the necessary directories and provide instructions for download
 
 ## Deployment
 
-### Railway Deployment
+### Vercel Deployment (Recommended)
 
 1. Push code to GitHub
-2. Connect your GitHub repo to Railway
-3. Railway will auto-detect Next.js and deploy
-4. Set up custom domain in Railway dashboard
+2. Go to [vercel.com](https://vercel.com) and sign up
+3. Click "New Project" and import your GitHub repository
+4. Vercel will auto-detect Next.js and deploy
+5. Set up custom domain in Vercel dashboard
 
 ### Environment Variables
 
@@ -130,7 +131,7 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 - **Framework**: Next.js 14 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **Deployment**: Railway (recommended)
+- **Deployment**: Vercel (recommended)
 - **Fonts**: Google Fonts (Raleway)
 
 ## License
