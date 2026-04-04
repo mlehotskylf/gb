@@ -1,10 +1,29 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ui/ContactForm";
 
+const BASE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.globalbunkers.us";
+
 export const metadata: Metadata = {
-  title: "Contact Us | Global Bunkers US",
+  title: "Contact Global Bunkers US | San Francisco, CA 94123",
   description:
-    "Get in touch with Global Bunkers US. Call (415) 990-8051 or fill out our contact form. 24/7 emergency availability.",
+    "Contact Global Bunkers US in San Francisco, CA. Call (415) 990-8051 for custom bunkers, panic rooms & safes. 24/7 emergency service. Free consultation.",
+  keywords: [
+    "contact Global Bunkers",
+    "security company San Francisco",
+    "bunker installation Bay Area",
+    "panic room contractor CA",
+    "bulletproof glass SF",
+  ],
+  alternates: {
+    canonical: `${BASE_URL}/contact`,
+  },
+  openGraph: {
+    title: "Contact Global Bunkers US | San Francisco, CA 94123",
+    description:
+      "Contact Global Bunkers US in San Francisco, CA. Call (415) 990-8051 for custom bunkers, panic rooms & safes. 24/7 emergency service. Free consultation.",
+    url: `${BASE_URL}/contact`,
+  },
 };
 
 export default function ContactPage() {

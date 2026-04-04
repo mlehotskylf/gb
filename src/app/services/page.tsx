@@ -2,10 +2,30 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { serviceCategories } from "@/lib/service-data";
 
+const BASE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.globalbunkers.us";
+
 export const metadata: Metadata = {
-  title: "Services | Global Bunkers US",
+  title: "Security Services | Bunkers & Panic Rooms | Bay Area",
   description:
-    "Explore our security services including bunkers, panic rooms, safes, bulletproof glass, and bank liquidation solutions.",
+    "Custom bunkers, panic rooms, bulletproof glass & safes in the Bay Area. Over 35 years of security expertise. Contact us today for a free consultation.",
+  keywords: [
+    "security services Bay Area",
+    "bunkers California",
+    "panic rooms San Francisco",
+    "bulletproof glass Bay Area",
+    "bank vault liquidation",
+    "safe installation CA",
+  ],
+  alternates: {
+    canonical: `${BASE_URL}/services`,
+  },
+  openGraph: {
+    title: "Security Services | Bunkers & Panic Rooms | Bay Area",
+    description:
+      "Custom bunkers, panic rooms, bulletproof glass & safes in the Bay Area. 35+ years of security expertise. Contact us for a free consultation.",
+    url: `${BASE_URL}/services`,
+  },
 };
 
 export default function ServicesPage() {

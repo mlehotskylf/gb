@@ -1,10 +1,29 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+const BASE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.globalbunkers.us";
+
 export const metadata: Metadata = {
-  title: "About Us | Global Bunkers US",
+  title: "About Global Bunkers US | San Francisco Security Experts",
   description:
-    "Learn about Global Bunkers US, established in 1988. Over 35 years of excellence in providing custom security solutions including bunkers, panic rooms, and safes.",
+    "Since 1988, Global Bunkers US has served San Francisco and the Bay Area with custom bunkers, panic rooms & safes. 35+ years of expertise. Free consultation.",
+  keywords: [
+    "Global Bunkers US San Francisco",
+    "Bay Area security company",
+    "bunker installation California",
+    "safe room experts SF",
+    "security solutions since 1988",
+  ],
+  alternates: {
+    canonical: `${BASE_URL}/about`,
+  },
+  openGraph: {
+    title: "About Global Bunkers US | San Francisco Security Experts",
+    description:
+      "Since 1988, Global Bunkers US has served San Francisco and the Bay Area with custom bunkers, panic rooms & safes. 35+ years of expertise. Free consultation.",
+    url: `${BASE_URL}/about`,
+  },
 };
 
 export default function AboutPage() {
