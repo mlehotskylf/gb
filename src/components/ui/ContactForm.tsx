@@ -6,7 +6,7 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
+    service: "",
     message: "",
   });
   const [status, setStatus] = useState<{
@@ -21,21 +21,30 @@ export default function ContactForm() {
     setStatus({ type: null, message: "" });
 
     try {
-      // TODO: Replace with actual form submission logic
-      // For now, simulate an API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      // Simulate success
-      setStatus({
-        type: "success",
-        message:
-          "Thank you for your message! We'll get back to you within 24 hours.",
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch (error) {
+
+      if (res.ok) {
+        setStatus({
+          type: "success",
+          message: "Thank you! We'll be in touch within 24 hours.",
+        });
+        setFormData({ name: "", email: "", service: "", message: "" });
+      } else {
+        setStatus({
+          type: "error",
+          message:
+            "Something went wrong. Please call us directly at (415) 990-8051.",
+        });
+      }
+    } catch {
       setStatus({
         type: "error",
-        message: "Something went wrong. Please try again or call us directly.",
+        message:
+          "Something went wrong. Please call us directly at (415) 990-8051.",
       });
     } finally {
       setIsSubmitting(false);
@@ -89,28 +98,28 @@ export default function ContactForm() {
         />
       </div>
 
-      {/* Subject */}
+      {/* Service */}
       <div>
-        <label htmlFor="subject" className="block text-sm font-semibold mb-2">
-          Subject *
+        <label htmlFor="service" className="block text-sm font-semibold mb-2">
+          Service *
         </label>
         <select
-          id="subject"
-          name="subject"
-          value={formData.subject}
+          id="service"
+          name="service"
+          value={formData.service}
           onChange={handleChange}
           required
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
         >
-          <option value="">Select a subject</option>
-          <option value="bunkers">Bunkers & Bomb Shelters</option>
-          <option value="panic-rooms">Panic & Safe Rooms</option>
-          <option value="safes">Safes</option>
-          <option value="bulletproof-glass">Bulletproof Glass</option>
-          <option value="bank-liquidation">Bank Liquidation</option>
-          <option value="consultation">General Consultation</option>
-          <option value="emergency">Emergency Service</option>
-          <option value="other">Other</option>
+          <option value="">Select a service</option>
+          <option value="Bunkers & Bomb Shelters">Bunkers & Bomb Shelters</option>
+          <option value="Panic & Safe Rooms">Panic & Safe Rooms</option>
+          <option value="Safes">Safes</option>
+          <option value="Bulletproof Glass">Bulletproof Glass</option>
+          <option value="Bank Liquidation">Bank Liquidation</option>
+          <option value="General Consultation">General Consultation</option>
+          <option value="Emergency Service">Emergency Service</option>
+          <option value="Other">Other</option>
         </select>
       </div>
 
@@ -148,9 +157,35 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
       >
-        {isSubmitting ? "Sending..." : "Send Message"}
+        {isSubmitting ? (
+          <>
+            <svg
+              className="animate-spin h-4 w-4"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              />
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+              />
+            </svg>
+            Sending...
+          </>
+        ) : (
+          "Send Message"
+        )}
       </button>
 
       <p className="text-sm text-gray-600 text-center">
