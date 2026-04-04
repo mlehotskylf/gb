@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const EMAIL_RE = /.+@.+\..+/;
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(request: Request) {
   let body: unknown;
@@ -11,9 +11,17 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
   }
 
-  const { name, email, service, message } = body as Record<string, string>;
+  if (!body || typeof body !== "object" || Array.isArray(body)) {
+    return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+  }
 
-  if (!name?.trim() || !email?.trim() || !message?.trim()) {
+  const { name, email, service, message } = body as Record<string, unknown>;
+
+  if (typeof name !== "string" || typeof email !== "string" || typeof message !== "string") {
+    return NextResponse.json({ error: "Invalid field types" }, { status: 400 });
+  }
+
+  if (!name.trim() || !email.trim() || !message.trim()) {
     return NextResponse.json(
       { error: "Missing required fields" },
       { status: 400 }
@@ -45,7 +53,9 @@ export async function POST(request: Request) {
 
   // Strip newlines to prevent SMTP header injection via subject fields
   const safeName = name.replace(/[\r\n]/g, " ").trim();
-  const safeService = (service || "").replace(/[\r\n]/g, " ").trim();
+  const safeService = typeof service === "string"
+    ? service.replace(/[\r\n]/g, " ").trim()
+    : "";
 
   const subject = `New inquiry – ${safeService || "General"} – ${safeName}`;
 
@@ -70,7 +80,7 @@ export async function POST(request: Request) {
         </tr>
         <tr style="background-color: #f9f9f9;">
           <td style="font-weight: bold; border-bottom: 1px solid #e0e0e0;">Service</td>
-          <td style="border-bottom: 1px solid #e0e0e0;">${escapeHtml(service || "Not specified")}</td>
+          <td style="border-bottom: 1px solid #e0e0e0;">${escapeHtml(safeService || "Not specified")}</td>
         </tr>
         <tr>
           <td style="font-weight: bold; vertical-align: top; padding-top: 14px;">Message</td>

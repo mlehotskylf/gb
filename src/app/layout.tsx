@@ -57,16 +57,16 @@ const jsonLd = {
     closes: "23:59",
   })),
   areaServed: [
-    "San Francisco",
-    "Oakland",
-    "San Jose",
-    "Berkeley",
-    "Marin County",
-    "Palo Alto",
-    "Silicon Valley",
-    "Bay Area",
-    "California",
-  ].map((name) => ({ "@type": "City", name })),
+    { "@type": "City", name: "San Francisco" },
+    { "@type": "City", name: "Oakland" },
+    { "@type": "City", name: "San Jose" },
+    { "@type": "City", name: "Berkeley" },
+    { "@type": "City", name: "Palo Alto" },
+    { "@type": "AdministrativeArea", name: "Marin County" },
+    { "@type": "AdministrativeArea", name: "Bay Area" },
+    { "@type": "AdministrativeArea", name: "Silicon Valley" },
+    { "@type": "State", name: "California" },
+  ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Security Solutions",
@@ -88,7 +88,8 @@ const jsonLd = {
   // ],
 };
 
-const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const rawGaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "";
+const gaMeasurementId = /^G-[A-Z0-9]+$/.test(rawGaId) ? rawGaId : undefined;
 
 export default function RootLayout({
   children,
