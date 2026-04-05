@@ -71,14 +71,14 @@ export default function ServicePreview() {
                 />
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70 group-hover:opacity-60 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10 opacity-80 group-hover:opacity-70 transition-opacity" />
 
                 {/* Content */}
                 <div className="absolute inset-0 flex flex-col justify-end p-5 text-white">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-accent transition-colors">
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-accent transition-colors drop-shadow-lg">
                     {service.title}
                   </h3>
-                  <p className="text-gray-200 text-sm mb-3 line-clamp-2">{service.description}</p>
+                  <p className="text-gray-200 text-sm mb-3 line-clamp-2 drop-shadow">{service.description}</p>
                   <span className="inline-flex items-center text-accent font-semibold group-hover:gap-2 transition-all">
                     Learn More
                     <svg
