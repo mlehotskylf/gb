@@ -80,11 +80,11 @@ const jsonLd = {
       },
     })),
   },
-  // sameAs: add social/profile URLs here when available, e.g.:
+  // TODO: Uncomment and replace with real URLs when Facebook/YouTube pages are live
   // sameAs: [
-  //   "https://www.facebook.com/globalbunkersus",
-  //   "https://www.youtube.com/@globalbunkersus",
-  //   "https://g.co/kgs/...",
+  //   "https://www.facebook.com/REPLACE_WITH_REAL_PAGE",
+  //   "https://www.youtube.com/@REPLACE_WITH_REAL_CHANNEL",
+  //   "https://g.co/kgs/REPLACE_WITH_GOOGLE_BUSINESS_ID",
   // ],
 };
 

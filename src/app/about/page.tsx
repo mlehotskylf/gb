@@ -251,9 +251,9 @@ export default function AboutPage() {
           <p className="text-xl mb-8 text-gray-300">
             Contact us today for a free consultation
           </p>
-          <a href="/contact" className="btn-secondary text-lg px-10 py-4">
+          <Link href="/contact" className="btn-secondary text-lg px-10 py-4">
             Get Started
-          </a>
+          </Link>
         </div>
       </section>
     </div>
