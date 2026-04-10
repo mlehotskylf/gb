@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { serviceCategories } from "@/lib/service-data";
+import { seoContent } from "@/lib/seo-content";
 import Lightbox from "@/components/ui/Lightbox";
 import type { ServiceCategory } from "@/types";
 
@@ -36,6 +37,8 @@ export default function ServicePageClient({
   const otherServices = serviceCategories.filter(
     (cat) => cat.id !== service.id
   );
+
+  const seo = seoContent[service.slug];
 
   return (
     <>
@@ -119,6 +122,84 @@ export default function ServicePageClient({
             </div>
           </div>
         </section>
+
+        {/* SEO Content */}
+        {seo && (
+          <section className="section-padding bg-white">
+            <div className="container-custom max-w-4xl">
+              {/* About */}
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">
+                {seo.aboutTitle}
+              </h2>
+              {seo.aboutParagraphs.map((paragraph, i) => (
+                <p
+                  key={i}
+                  className="text-gray-700 leading-relaxed mb-6 text-lg"
+                >
+                  {paragraph}
+                </p>
+              ))}
+
+              {/* What's Included */}
+              <h2 className="text-3xl md:text-4xl font-bold mt-16 mb-8">
+                {seo.featuresTitle}
+              </h2>
+              <ul className="space-y-4 mb-16">
+                {seo.features.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <svg
+                      className="w-6 h-6 text-primary flex-shrink-0 mt-0.5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-gray-700 text-lg">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* FAQ */}
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">
+                {seo.faqTitle}
+              </h2>
+              <div className="space-y-4">
+                {seo.faqs.map((faq, i) => (
+                  <details
+                    key={i}
+                    className="group border border-gray-200 rounded-lg"
+                  >
+                    <summary className="flex items-center justify-between cursor-pointer px-6 py-4 font-semibold text-lg text-gray-900 hover:text-primary transition-colors">
+                      {faq.question}
+                      <svg
+                        className="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </summary>
+                    <p className="px-6 pb-4 text-gray-700 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Other Services */}
         <section className="section-padding bg-gray-50">
