@@ -64,7 +64,7 @@ export default function AboutPage() {
               </p>
               <p className="text-lg text-gray-700">
                 Our clients include private homeowners, businesses, and
-                institutions across California who need protection that
+                institutions across the US who need protection that
                 actually holds up.
               </p>
             </div>

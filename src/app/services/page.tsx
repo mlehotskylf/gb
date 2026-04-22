@@ -108,7 +108,7 @@ export default function ServicesPage() {
           <h2 className="text-3xl font-bold mb-8">Why Global Bunkers US?</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: "35+ Years of Experience", body: "Founded in 1988, we have completed hundreds of installations across the Bay Area and beyond. Our track record speaks for itself." },
+              { title: "35+ Years of Experience", body: "Founded in 1988, we have completed hundreds of installations across the US. Our track record speaks for itself." },
               { title: "Custom Fabrication", body: "We fabricate steel plate walls, vault doors, and ballistic panels in-house — no middlemen, tighter tolerances, and full control over quality." },
               { title: "Bank-Grade Equipment", body: "Through our bank liquidation division we source vault doors, safes, and deposit boxes directly from decommissioned financial institutions — at a fraction of new cost." },
             ].map((item) => (

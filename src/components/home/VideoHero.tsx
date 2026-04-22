@@ -45,7 +45,7 @@ export default function VideoHero() {
           <div className="container-custom">
             <div className="max-w-3xl text-white">
               <p className="text-accent font-semibold tracking-widest uppercase text-sm mb-3">
-                San Francisco Bay Area · Since 1988
+                Since 1988
               </p>
               <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
                 When Safety<br className="hidden md:block" /> Isn&apos;t Optional
