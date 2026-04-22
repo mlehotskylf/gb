@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function VideoHero() {
   return (
-    <section className="relative h-[500px] md:h-[620px] overflow-hidden bg-gray-900">
+    <section className="relative h-[560px] md:h-[620px] overflow-hidden bg-gray-900">
       {/* Fallback image shown while video loads */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
@@ -61,8 +61,8 @@ export default function VideoHero() {
         </div>
       </div>
 
-      {/* Service quick-nav strip — pinned to bottom of hero */}
-      <div className="absolute bottom-0 left-0 right-0 z-10">
+      {/* Service quick-nav strip — pinned to bottom of hero, hidden on mobile */}
+      <div className="absolute bottom-0 left-0 right-0 z-10 hidden md:block">
         <div className="container-custom">
           <p className="text-white/40 text-xs italic text-right pb-1">Bunker interior walkthrough</p>
           <div className="flex flex-wrap gap-2 pb-5">
