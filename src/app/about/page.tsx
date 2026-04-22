@@ -30,12 +30,13 @@ export default function AboutPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-secondary text-white py-20">
+      <section className="bg-[#0a0a0f] text-white py-20">
         <div className="container-custom">
+          <p className="text-accent font-semibold tracking-widest uppercase text-sm mb-3">Since 1988</p>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">About Us</h1>
-          <p className="text-xl md:text-2xl max-w-3xl">
-            The premier provider of high-quality safes and security solutions
-            since 1988
+          <p className="text-xl text-gray-300 max-w-3xl">
+            35 years building what others can&apos;t. Custom bunkers, panic rooms,
+            vault rooms & bulletproof installations across California.
           </p>
         </div>
       </section>
@@ -46,25 +47,25 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Our Commitment to Security
+                Built From the Ground Up
               </h2>
               <p className="text-lg text-gray-700 mb-4">
-                Global Bunkers US has been at the forefront of security
-                solutions since 1988. Based in San Francisco, we have spent over
-                three decades building a reputation for excellence and
-                reliability in the security industry.
+                Global Bunkers US was founded in San Francisco in 1988 by Vince
+                Neuwirth — a builder who believed that real security means
+                engineering every detail yourself. Over 35 years later, that
+                philosophy hasn&apos;t changed.
               </p>
               <p className="text-lg text-gray-700 mb-4">
-                Our mission is to provide comprehensive security solutions that
-                give our clients complete peace of mind. Whether you need a
-                custom bunker, a panic room, bulletproof glass installation, or
-                any type of safe, we have the expertise and experience to
-                deliver exceptional results.
+                We design, fabricate, and install everything in-house: steel
+                plate vault rooms, underground bunkers, panic rooms, bulletproof
+                glass, and high-security safes. No subcontractors, no
+                off-the-shelf solutions — every project is custom-built to your
+                property and threat profile.
               </p>
               <p className="text-lg text-gray-700">
-                We understand that security is not one-size-fits-all. That&apos;s why
-                every project we undertake is custom-designed to meet your
-                specific needs and requirements.
+                Our clients include private homeowners, businesses, and
+                institutions across California who need protection that
+                actually holds up.
               </p>
             </div>
             <div className="aspect-[4/3] rounded-xl shadow-2xl overflow-hidden">
@@ -80,62 +81,33 @@ export default function AboutPage() {
       </section>
 
       {/* Services Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-[#0a0a0f] text-white">
         <div className="container-custom">
+          <p className="text-accent font-semibold tracking-widest uppercase text-sm mb-3 text-center">What We Build</p>
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
             Our Services
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              {
-                title: "Panic & Safe Rooms",
-                description:
-                  "Secure, fortified rooms integrated into your home or business for emergency protection and valuable storage.",
-                href: "/services/panic-safe-rooms",
-              },
-              {
-                title: "Vault Rooms",
-                description:
-                  "Purpose-built steel and concrete rooms for protecting valuables, firearms collections, or sensitive assets.",
-                href: "/services/vault-rooms",
-              },
-              {
-                title: "Bunkers & Bomb Shelters",
-                description:
-                  "Custom-designed underground fortifications built to withstand extreme conditions and provide ultimate protection.",
-                href: "/services/bunkers",
-              },
-              {
-                title: "Bulletproof Glass Doors & Windows",
-                description:
-                  "Military-grade transparent armor for windows, doors, and partitions to protect against ballistic threats.",
-                href: "/services/bulletproof-glass",
-              },
-              {
-                title: "Any Type of Safes",
-                description:
-                  "Any type of safe from compact personal safes to large vault systems for maximum security of your valuables.",
-                href: "/services/safes",
-              },
-              {
-                title: "Bank Liquidation",
-                description:
-                  "Specialized services for acquiring and repurposing high-security equipment from decommissioned financial institutions.",
-                href: "/services/bank-liquidation",
-              },
+              { title: "Panic & Safe Rooms", description: "Secure, fortified rooms integrated into your home or business for emergency protection and valuable storage.", href: "/services/panic-safe-rooms" },
+              { title: "Vault Rooms", description: "Purpose-built steel and concrete rooms for protecting valuables, firearms collections, or sensitive assets.", href: "/services/vault-rooms" },
+              { title: "Bunkers & Bomb Shelters", description: "Custom-designed underground fortifications built to withstand extreme conditions and provide ultimate protection.", href: "/services/bunkers" },
+              { title: "Bulletproof Glass Doors & Windows", description: "Military-grade transparent armor for windows, doors, and partitions to protect against ballistic threats.", href: "/services/bulletproof-glass" },
+              { title: "Any Type of Safes", description: "Any type of safe from compact personal safes to large vault systems for maximum security of your valuables.", href: "/services/safes" },
+              { title: "Bank Liquidation", description: "Specialized services for acquiring and repurposing high-security equipment from decommissioned financial institutions.", href: "/services/bank-liquidation" },
             ].map((service) => (
               <Link
                 key={service.title}
                 href={service.href}
-                className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 block"
+                className="group bg-white/5 border border-white/10 hover:border-accent/40 p-6 rounded-xl transition-all duration-300 block"
               >
-                <h3 className="text-xl font-bold mb-3 text-primary group-hover:text-accent transition-colors">
+                <h3 className="text-lg font-bold mb-2 text-white group-hover:text-accent transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-gray-600">{service.description}</p>
-                <div className="mt-4 text-accent font-semibold inline-flex items-center">
+                <p className="text-gray-400 text-sm mb-4">{service.description}</p>
+                <div className="text-accent font-semibold text-sm inline-flex items-center gap-1">
                   Learn More
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
@@ -243,7 +215,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-primary text-white">
+      <section className="section-padding bg-gradient-to-br from-[#0a0a0f] via-secondary to-[#0a0a0f] text-white">
         <div className="container-custom text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Discuss Your Security Needs?

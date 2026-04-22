@@ -14,8 +14,8 @@ const config: Config = {
           light: "#2d2d2d",
         },
         secondary: {
-          DEFAULT: "#595940",
-          light: "#6b6b50",
+          DEFAULT: "#0f172a",
+          light: "#1e293b",
         },
         accent: {
           DEFAULT: "#c9a961",

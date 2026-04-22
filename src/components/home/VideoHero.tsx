@@ -26,8 +26,8 @@ export default function VideoHero() {
         <source src="/videos/globalbunkers.mp4" type="video/mp4" />
       </video>
 
-      {/* Dark gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/45 to-black/70" />
+      {/* Dark gradient overlay — extra dark at bottom for service strip legibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
 
       {/* Content */}
       <div className="absolute inset-0 flex items-center">
@@ -37,11 +37,11 @@ export default function VideoHero() {
               San Francisco Bay Area · Since 1988
             </p>
             <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
-              Security Solutions<br className="hidden md:block" /> Built to Last
+              When Safety<br className="hidden md:block" /> Isn&apos;t Optional
             </h1>
             <p className="text-lg md:text-xl mb-8 text-gray-200 max-w-xl">
-              Custom bunkers, panic rooms, vault rooms, bulletproof glass & safes.
-              Expert installation across California.
+              Underground bunkers, panic rooms, vault rooms & bulletproof glass —
+              built to protect what matters most.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -61,8 +61,31 @@ export default function VideoHero() {
         </div>
       </div>
 
-      {/* Bottom fade into the next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent" />
+      {/* Service quick-nav strip — pinned to bottom of hero */}
+      <div className="absolute bottom-0 left-0 right-0 z-10">
+        <div className="container-custom">
+          <p className="text-white/40 text-xs italic text-right pb-1">Bunker interior walkthrough</p>
+          <div className="flex flex-wrap gap-2 pb-5">
+            {[
+              { label: "Panic & Safe Rooms", href: "/services/panic-safe-rooms" },
+              { label: "Vault Rooms", href: "/services/vault-rooms" },
+              { label: "Bunkers & Bomb Shelters", href: "/services/bunkers" },
+              { label: "Bulletproof Glass", href: "/services/bulletproof-glass" },
+              { label: "Any Type of Safes", href: "/services/safes" },
+              { label: "Bank Liquidation", href: "/services/bank-liquidation" },
+            ].map((s) => (
+              <Link
+                key={s.href}
+                href={s.href}
+                className="text-sm font-semibold text-white bg-white/10 hover:bg-accent border border-white/25 hover:border-accent px-4 py-2 rounded-full backdrop-blur-sm transition-all duration-200"
+              >
+                {s.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
     </section>
   );
 }

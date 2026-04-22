@@ -49,11 +49,11 @@ const services = [
 
 export default function ServicePreview() {
   return (
-    <section className="pt-10 pb-16 bg-white border-t-4 border-accent">
+    <section className="pt-10 pb-16 bg-white">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Our Security Services
+            What We Build
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Professional installation and custom solutions for ultimate protection
@@ -64,7 +64,7 @@ export default function ServicePreview() {
           {services.map((service) => (
             <div
               key={service.id}
-              className="group flex flex-col rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-white"
+              className="group flex flex-col rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-white border border-transparent hover:border-accent/30"
             >
               {/* Image */}
               <div className="aspect-[16/9] overflow-hidden">
@@ -83,7 +83,7 @@ export default function ServicePreview() {
                 <p className="text-gray-500 text-sm flex-1 mb-4">{service.description}</p>
                 <Link
                   href={service.link}
-                  className="inline-flex items-center justify-center gap-2 bg-steel hover:bg-steel-dark text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors duration-200"
+                  className="inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent-light text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors duration-200"
                 >
                   Learn More
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

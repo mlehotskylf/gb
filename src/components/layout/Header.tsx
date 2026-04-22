@@ -87,8 +87,8 @@ export default function Header() {
                     href={item.href}
                     className={`font-bold text-base transition-all px-4 py-2 rounded-lg border-2 ${
                       pathname === item.href
-                        ? "bg-primary text-white border-primary shadow-md"
-                        : "text-gray-700 border-transparent hover:border-primary/30 hover:bg-primary/5 hover:text-primary"
+                        ? "bg-accent text-white border-accent shadow-md"
+                        : "text-gray-700 border-transparent hover:border-accent/30 hover:bg-accent/5 hover:text-accent"
                     }`}
                   >
                     {item.name}
@@ -204,8 +204,8 @@ export default function Header() {
                     href={item.href}
                     className={`block py-3 px-3 font-bold rounded-lg ${
                       pathname === item.href
-                        ? "bg-primary text-white"
-                        : "text-gray-700 hover:bg-primary/10 hover:text-primary"
+                        ? "bg-accent text-white"
+                        : "text-gray-700 hover:bg-accent/10 hover:text-accent"
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >

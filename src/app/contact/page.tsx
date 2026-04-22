@@ -30,12 +30,13 @@ export default function ContactPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-secondary text-white py-20">
+      <section className="bg-[#0a0a0f] text-white py-20">
         <div className="container-custom">
+          <p className="text-accent font-semibold tracking-widest uppercase text-sm mb-3">Get In Touch</p>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Contact Us</h1>
-          <p className="text-xl md:text-2xl max-w-3xl">
-            Let us get in touch with you! We&apos;re here to answer your questions
-            and discuss your security needs.
+          <p className="text-xl text-gray-300 max-w-3xl">
+            We respond fast. Call us directly or fill out the form and
+            we&apos;ll be in touch within 24 hours.
           </p>
         </div>
       </section>
@@ -48,8 +49,8 @@ export default function ContactPage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
               <p className="text-lg text-gray-700 mb-8">
-                Fill in your details below and we will be in touch! For
-                immediate assistance, please call us directly.
+                For immediate assistance call us directly. For project
+                inquiries, fill out the form and we&apos;ll follow up within 24 hours.
               </p>
 
               {/* Contact Details */}
@@ -174,14 +175,11 @@ export default function ContactPage() {
               </div>
 
               {/* Additional Info */}
-              <div className="mt-8 p-6 bg-gray-50 rounded-lg">
-                <h3 className="font-bold text-lg mb-3">
-                  Free Consultation Available
-                </h3>
-                <p className="text-gray-700">
-                  We offer complimentary consultations to discuss your security
-                  needs and provide expert recommendations tailored to your
-                  specific situation.
+              <div className="mt-8 p-6 bg-gray-50 rounded-lg border-l-4 border-accent">
+                <p className="text-gray-700 font-medium">
+                  All consultations are free and come with no obligation.
+                  We&apos;ll assess your needs and provide a detailed proposal —
+                  no pressure, no guesswork.
                 </p>
               </div>
             </div>

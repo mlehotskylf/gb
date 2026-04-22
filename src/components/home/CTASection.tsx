@@ -2,14 +2,14 @@ import Link from "next/link";
 
 export default function CTASection() {
   return (
-    <section className="section-padding bg-primary text-white">
+    <section className="section-padding bg-gradient-to-br from-[#0a0a0f] via-secondary to-[#0a0a0f] text-white">
       <div className="container-custom">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
-            Have Questions About a Project?
+            Ready to Build?
           </h2>
           <p className="text-xl md:text-2xl mb-4 text-gray-300">
-            We offer free consultations to discuss your security needs
+            Free consultations — no obligation, no pressure
           </p>
           <p className="text-lg mb-8 text-gray-400">
             Our experts are available 24/7 for emergency situations

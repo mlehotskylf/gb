@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function HowItWorks() {
   const steps = [
     {
@@ -22,8 +24,8 @@ export default function HowItWorks() {
     },
     {
       number: "05",
-      title: "Testing & Training",
-      description: "We thoroughly test all systems and provide comprehensive training on operation and maintenance to ensure you're completely confident."
+      title: "Walkthrough & Handoff",
+      description: "We walk you through every detail of the installation, test all systems together, and make sure you're fully confident before we leave."
     },
     {
       number: "06",
@@ -33,61 +35,42 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-stone-50">
       <div className="container-custom">
         <div className="text-center mb-16">
+          <p className="text-accent font-semibold tracking-widest uppercase text-sm mb-3">The Process</p>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             How It Works
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our proven process ensures a smooth experience from initial contact to final installation and beyond
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+            From first call to final walkthrough — a clear, straightforward process with no surprises.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {steps.map((step, index) => (
-            <div
-              key={index}
-              className="relative"
-            >
-              {/* Step number */}
-              <div className="text-6xl font-bold text-accent opacity-20 mb-4">
-                {step.number}
+            <div key={index} className="relative flex gap-5">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center">
+                <span className="text-accent font-bold text-sm">{step.number}</span>
               </div>
-
-              {/* Content */}
-              <div className="relative">
-                <h3 className="text-2xl font-bold mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-gray-600">
-                  {step.description}
-                </p>
+              <div>
+                <h3 className="text-lg font-bold mb-2">{step.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{step.description}</p>
               </div>
-
-              {/* Connector arrow for desktop (except last item in each row) */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-8 -right-4 text-accent opacity-30">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </div>
-              )}
             </div>
           ))}
         </div>
 
-        {/* CTA */}
         <div className="text-center mt-16">
-          <p className="text-lg text-gray-600 mb-6">
-            Ready to get started on your security project?
-          </p>
-          <a
+          <Link
             href="/contact"
-            className="btn-primary text-lg px-10 py-4 inline-block"
+            className="inline-flex items-center gap-2 bg-primary hover:bg-primary-light text-white font-bold px-10 py-4 rounded-lg transition-colors duration-200"
           >
             Schedule Your Free Consultation
-          </a>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>
