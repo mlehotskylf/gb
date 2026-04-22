@@ -4,6 +4,7 @@ export interface ServiceCategory {
   slug: string;
   description: string;
   coverImage: string;
+  coverImagePosition?: string;
   images: ServiceImage[];
 }
 

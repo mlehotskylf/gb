@@ -35,8 +35,21 @@ export const serviceMetaMap: Record<string, ServiceMeta> = {
     ],
     canonical: `${BASE_URL}/services/panic-safe-rooms`,
   },
+  "vault-rooms": {
+    title: "Vault Rooms | Bank-Grade Security | San Francisco Bay Area",
+    description:
+      "Purpose-built vault rooms fabricated from heavy steel plate with reinforced concrete, ballistic doors, and advanced locking mechanisms. Protecting valuables, firearms, and sensitive assets in Bay Area homes and businesses since 1988.",
+    keywords: [
+      "vault rooms San Francisco",
+      "bank-grade vault room Bay Area",
+      "steel vault room California",
+      "vault door installation SF",
+      "secure vault room contractor Bay Area",
+    ],
+    canonical: `${BASE_URL}/services/vault-rooms`,
+  },
   "bulletproof-glass": {
-    title: "Bulletproof Glass Installation | Bay Area, California",
+    title: "Bulletproof Glass Doors & Windows | Bay Area Installation",
     description:
       "Military-grade bulletproof glass for windows, doors & partitions. Protecting Bay Area homes and businesses since 1988. California service. Free consultation.",
     keywords: [

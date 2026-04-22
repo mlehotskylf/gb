@@ -21,6 +21,11 @@ const config: Config = {
           DEFAULT: "#c9a961",
           light: "#d4b876",
         },
+        steel: {
+          DEFAULT: "#2563eb",
+          light: "#3b82f6",
+          dark: "#1d4ed8",
+        },
       },
       fontFamily: {
         sans: ["var(--font-raleway)", "system-ui", "sans-serif"],

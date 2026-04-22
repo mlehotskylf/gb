@@ -36,8 +36,26 @@ export default function ServicesPage() {
         <div className="container-custom">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Services</h1>
           <p className="text-xl md:text-2xl max-w-3xl">
-            Explore our comprehensive range of security solutions and custom
-            installations
+            From custom vault rooms and underground bunkers to bulletproof glass
+            and bank-grade safes — we design, fabricate, and install complete
+            security solutions for residential, commercial, and government clients.
+          </p>
+        </div>
+      </section>
+
+      {/* Intro */}
+      <section className="py-14 border-b border-gray-100">
+        <div className="container-custom max-w-4xl">
+          <p className="text-lg text-gray-600 leading-relaxed mb-4">
+            Global Bunkers US has been protecting families, businesses, and
+            institutions since 1988. Every project is custom-engineered to your
+            property, threat profile, and budget — we don&apos;t sell
+            off-the-shelf solutions. Our team handles the full process: site
+            assessment, design, fabrication, delivery, and installation.
+          </p>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            Browse our services below. Each page includes a full project gallery
+            and detailed description of what&apos;s included.
           </p>
         </div>
       </section>
@@ -45,69 +63,92 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {serviceCategories.map((service) => (
-              <Link
+              <div
                 key={service.id}
-                href={`/services/${service.slug}`}
-                className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                className="group flex flex-col rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 bg-white"
               >
-                {/* Service Image */}
-                <div className="aspect-[4/3] relative">
+                {/* Image */}
+                <div className="aspect-[16/9] overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={service.coverImage}
                     alt={service.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    style={service.coverImagePosition ? { objectPosition: service.coverImagePosition } : undefined}
                   />
-
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70 group-hover:opacity-60 transition-opacity" />
-
-                  {/* Content */}
-                  <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-                    <h2 className="text-2xl font-bold mb-2 group-hover:text-accent transition-colors">
-                      {service.title}
-                    </h2>
-                    <p className="text-gray-200 text-sm mb-4 line-clamp-2">
-                      {service.description}
-                    </p>
-                    <span className="inline-flex items-center text-accent font-semibold">
-                      Learn More
-                      <svg
-                        className="w-5 h-5 ml-1 group-hover:ml-2 transition-all"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </span>
-                  </div>
                 </div>
-              </Link>
+
+                {/* Content */}
+                <div className="flex flex-col flex-1 p-5">
+                  <h2 className="text-lg font-bold text-gray-900 mb-1">{service.title}</h2>
+                  <p className="text-gray-500 text-sm flex-1 mb-4">{service.description}</p>
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="inline-flex items-center justify-center gap-2 bg-steel hover:bg-steel-dark text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors duration-200"
+                  >
+                    Learn More
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Why Us */}
+      <section className="py-14 bg-gray-50 border-t border-gray-100">
+        <div className="container-custom max-w-4xl">
+          <h2 className="text-3xl font-bold mb-8">Why Global Bunkers US?</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-lg font-bold mb-2 text-primary">35+ Years of Experience</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Founded in 1988, we have completed hundreds of installations
+                across the Bay Area and beyond. Our track record speaks for
+                itself.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold mb-2 text-primary">Custom Fabrication</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                We fabricate steel plate walls, vault doors, and ballistic
+                panels in-house — no middlemen, tighter tolerances, and full
+                control over quality.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold mb-2 text-primary">Bank-Grade Equipment</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Through our bank liquidation division we source vault doors,
+                safes, and deposit boxes directly from decommissioned financial
+                institutions — at a fraction of new cost.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding">
         <div className="container-custom text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Interested in a Custom Solution?
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Ready to Protect What Matters?
           </h2>
-          <p className="text-xl mb-8 text-gray-700">
-            Every project we showcase was custom-designed for our client&apos;s
-            specific needs
+          <p className="text-xl mb-8 text-gray-600 max-w-2xl mx-auto">
+            Every project starts with a free site consultation. We&apos;ll assess
+            your space, understand your needs, and provide a detailed proposal —
+            no obligation.
           </p>
-          <Link href="/contact" className="btn-primary text-lg px-10 py-4">
-            Request a Consultation
+          <Link href="/contact" className="btn-primary text-lg px-10 py-4 inline-flex items-center gap-2">
+            Request a Free Consultation
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
           </Link>
         </div>
       </section>

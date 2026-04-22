@@ -88,40 +88,40 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Bunkers & Bomb Shelters",
-                description:
-                  "Custom-designed underground fortifications built to withstand extreme conditions and provide ultimate protection.",
-                href: "/services/bunkers",
-              },
-              {
                 title: "Panic & Safe Rooms",
                 description:
                   "Secure, fortified rooms integrated into your home or business for emergency protection and valuable storage.",
                 href: "/services/panic-safe-rooms",
               },
               {
-                title: "High-Security Safes",
+                title: "Vault Rooms",
                 description:
-                  "Any type of safe from compact personal safes to large vault systems for maximum security of your valuables.",
-                href: "/services/safes",
+                  "Purpose-built steel and concrete rooms for protecting valuables, firearms collections, or sensitive assets.",
+                href: "/services/vault-rooms",
               },
               {
-                title: "Bulletproof Glass",
+                title: "Bunkers & Bomb Shelters",
+                description:
+                  "Custom-designed underground fortifications built to withstand extreme conditions and provide ultimate protection.",
+                href: "/services/bunkers",
+              },
+              {
+                title: "Bulletproof Glass Doors & Windows",
                 description:
                   "Military-grade transparent armor for windows, doors, and partitions to protect against ballistic threats.",
                 href: "/services/bulletproof-glass",
+              },
+              {
+                title: "Any Type of Safes",
+                description:
+                  "Any type of safe from compact personal safes to large vault systems for maximum security of your valuables.",
+                href: "/services/safes",
               },
               {
                 title: "Bank Liquidation",
                 description:
                   "Specialized services for acquiring and repurposing high-security equipment from decommissioned financial institutions.",
                 href: "/services/bank-liquidation",
-              },
-              {
-                title: "Security Systems",
-                description:
-                  "Comprehensive security system integration including surveillance, access control, and alarm systems.",
-                href: "/services",
               },
             ].map((service) => (
               <Link

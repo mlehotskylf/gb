@@ -10,11 +10,12 @@ const navigation = [
     name: "Services",
     href: "/services",
     submenu: [
-      { name: "Bank Liquidation", href: "/services/bank-liquidation" },
       { name: "Panic & Safe Rooms", href: "/services/panic-safe-rooms" },
+      { name: "Vault Rooms", href: "/services/vault-rooms" },
       { name: "Bunkers & Bomb Shelters", href: "/services/bunkers" },
-      { name: "Bulletproof Glass", href: "/services/bulletproof-glass" },
+      { name: "Bulletproof Glass Doors & Windows", href: "/services/bulletproof-glass" },
       { name: "Any Type of Safes", href: "/services/safes" },
+      { name: "Bank Liquidation", href: "/services/bank-liquidation" },
     ],
   },
   { name: "About", href: "/about" },
@@ -46,7 +47,8 @@ export default function Header() {
               <div key={item.name} className="relative group">
                 {item.submenu ? (
                   <>
-                    <button
+                    <Link
+                      href={item.href}
                       className={`font-bold text-base transition-all px-4 py-2 rounded-lg border-2 ${
                         pathname.startsWith("/services")
                           ? "bg-accent text-white border-accent shadow-md"
@@ -67,7 +69,7 @@ export default function Header() {
                           d="M19 9l-7 7-7-7"
                         />
                       </svg>
-                    </button>
+                    </Link>
                     <div className="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 bg-white shadow-lg rounded-lg py-2">
                       {item.submenu.map((subitem) => (
                         <Link
