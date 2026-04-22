@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import HeroCarousel from "@/components/home/HeroCarousel";
+import VideoHero from "@/components/home/VideoHero";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import ServicePreview from "@/components/home/ServicePreview";
 import HowItWorks from "@/components/home/HowItWorks";
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <HeroCarousel />
+      <VideoHero />
       <ServicePreview />
       <WhyChooseUs />
       <HowItWorks />

@@ -49,7 +49,7 @@ const services = [
 
 export default function ServicePreview() {
   return (
-    <section className="section-padding bg-white border-t-4 border-accent">
+    <section className="pt-10 pb-16 bg-white border-t-4 border-accent">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
