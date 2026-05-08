@@ -49,7 +49,9 @@ export async function POST(request: Request) {
   const resend = new Resend(apiKey);
   const from =
     process.env.RESEND_FROM_EMAIL ?? "Global Bunkers <onboarding@resend.dev>";
-  const cc = process.env.CONTACT_CC_EMAIL;
+  const cc = process.env.CONTACT_CC_EMAIL
+    ? process.env.CONTACT_CC_EMAIL.split(",").map((e) => e.trim()).filter(Boolean)
+    : undefined;
 
   // Strip newlines to prevent SMTP header injection via subject fields
   const safeName = name.replace(/[\r\n]/g, " ").trim();
@@ -94,7 +96,7 @@ export async function POST(request: Request) {
     const { error } = await resend.emails.send({
       from,
       to,
-      ...(cc ? { cc: [cc] } : {}),
+      ...(cc ? { cc } : {}),
       replyTo: email,
       subject,
       html,
